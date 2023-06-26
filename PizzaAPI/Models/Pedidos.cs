@@ -18,5 +18,6 @@ namespace PizzaAPI.Models
         [Required]
         public string Sabores { get; set; }
         public string Obs { get; set; }
+        public string status { get; set; }
     }
 }

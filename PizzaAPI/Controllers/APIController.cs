@@ -76,6 +76,7 @@ namespace PizzaAPI.Controllers
                 p.Mesa = pedido.Mesa;
                 p.Sabores = pedido.Sabores;
                 p.Obs = pedido.Obs;
+                p.status = pedido.status;
 
                 contexto.Pedidos.Update(p);
                 await contexto.SaveChangesAsync();
