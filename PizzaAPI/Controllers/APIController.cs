@@ -38,25 +38,6 @@ namespace PizzaAPI.Controllers
             return pedidos == null ? NotFound() : Ok(pedidos);
         }
 
-        [HttpPost]
-        [Route("pedidos")]
-        public async Task<IActionResult> PostAsync(
-        [FromServices] pizzariaContext contexto,
-        [FromBody] Pedidos pedido
-            )
-        {
-
-            try
-            {
-                await contexto.Pedidos.AddAsync(pedido);
-                await contexto.SaveChangesAsync();
-                return Created($"api/pedidos/{pedido.id}", pedido);
-
-            }
-            catch (Exception ex) { return BadRequest(ex.Message); }
-
-        }
-
         [HttpPut]
         [Route("pedidos/{id}")]
         public async Task<IActionResult> PutAsync(
