@@ -10,7 +10,7 @@ namespace PizzaAPI.Controllers
     public class ClienteController : ControllerBase
     {
         [HttpGet]
-        [Route("pedidos/{Mesa}")]
+        [Route("pedidosCliente/{Mesa}")]
         public async Task<IActionResult> getByIdAsync(
         [FromServices] pizzariaContext contexto,
         [FromRoute] string Mesa
@@ -25,7 +25,7 @@ namespace PizzaAPI.Controllers
         }
 
         [HttpPost]
-        [Route("pedidos")]
+        [Route("pedidosCliente")]
         public async Task<IActionResult> PostAsync(
         [FromServices] pizzariaContext contexto,
         [FromBody] Pedidos pedido
