@@ -10,13 +10,12 @@ namespace PizzaAPI
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
-
+            // Add services to the container.
+            builder.Services.AddControllers();
+            builder.Services.AddCors();
             builder.Services.AddDbContext<pizzariaContext>(
                 options => options.UseSqlServer("name=ConnectionStrings:DefaultConnection"));
 
-            // Add services to the container.
-
-            builder.Services.AddControllers();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
@@ -32,8 +31,15 @@ namespace PizzaAPI
 
             app.UseHttpsRedirection();
 
+            app.UseRouting();
+
+            app.UseCors(options => options.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader();
+
             app.UseAuthorization();
 
+            app.UseEndpoints(endpoints => {
+                endpoints.MapControllers();
+            })
 
             app.MapControllers();
 
