@@ -9,10 +9,14 @@ import { PedidosService } from './pedidos.service';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { PedidoComponentComponent } from './components/pedido-component/pedido-component.component';
+import { PedidosComponent } from './components/pedidos/pedidos.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    PedidoComponentComponent,
+    PedidosComponent
   ],
   imports: [
     BrowserModule,
