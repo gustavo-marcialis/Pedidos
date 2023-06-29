@@ -1,7 +1,7 @@
 export class Pedidos{
     pedidosid: number;
-    Mesa: string;
-    Sabores: string;
-    Obs: string;
+    mesa: string;
+    sabores: string;
+    obs: string;
     status: string;
 }
