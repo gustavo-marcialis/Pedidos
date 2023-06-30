@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
@@ -7,26 +7,19 @@ import { FormControl, FormGroup } from '@angular/forms';
   styleUrls: ['./pedidos.component.css']
 })
 export class PedidosComponent implements OnInit {
+
   formulario: any;
-  tituloFormulario: string;
+  tituloFormulario!: string;
 
   constructor() { }
 
   ngOnInit(): void {
-    this.tituloFormulario = 'Fazer Pedido';
 
-    this.formulario = new FormGroup({
+    this.tituloFormulario = 'Fazer Pedido';
+    this.formulario = new FormGroup ({
       mesa: new FormControl(null),
       sabores: new FormControl(null),
       obs: new FormControl(null)
     });
   }
 }
-
-}
-
-
-function ngOnInit() {
-
-}
-

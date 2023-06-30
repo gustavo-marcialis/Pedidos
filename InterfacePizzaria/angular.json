@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "PedidosInterface": {
+    "InterfacePizzaria": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/pedidos-interface",
+            "outputPath": "dist/interface-pizzaria",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [
@@ -60,10 +60,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "PedidosInterface:build:production"
+              "browserTarget": "InterfacePizzaria:build:production"
             },
             "development": {
-              "browserTarget": "PedidosInterface:build:development"
+              "browserTarget": "InterfacePizzaria:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -71,7 +71,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "PedidosInterface:build"
+            "browserTarget": "InterfacePizzaria:build"
           }
         },
         "test": {
@@ -96,6 +96,6 @@
     }
   },
   "cli": {
-    "analytics": "03678c41-8d7a-45d2-9631-5089bab2d75d"
+    "analytics": "21fdb467-7fe0-467f-a5fb-e317fb97e05f"
   }
 }

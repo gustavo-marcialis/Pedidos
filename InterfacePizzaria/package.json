@@ -1,5 +1,5 @@
 {
-  "name": "pedidos-interface",
+  "name": "interface-pizzaria",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
