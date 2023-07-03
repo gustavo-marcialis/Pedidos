@@ -22,7 +22,7 @@ export class PedidosService {
   }
 
   GetId(pedidoid: number): Observable<Pedidos> {
-    const apiUrl =   url = 'https://localhost:7190/api/API/pedidos/{id}';
+    const apiUrl = 'https://localhost:7190/api/API/pedidos/{id}';
     return this.http.get<Pedidos>(apiUrl);
   }
 
@@ -35,7 +35,7 @@ export class PedidosService {
   }
 
   DeletPedido(pedidoid: number): Observable<any> {
-    const apiUrl =   url = 'https://localhost:7190/api/API/pedidos/{id}';
+    const apiUrl = 'https://localhost:7190/api/API/pedidos/{id}';
     return this.http.delete<number>(apiUrl, httpOptions);
   }
 }
