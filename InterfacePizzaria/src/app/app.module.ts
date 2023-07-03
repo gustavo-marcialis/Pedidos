@@ -5,9 +5,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PedidosComponent } from './components/pedidos/pedidos.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { PizzariaComponent } from './components/pizzaria/pizzaria.component';
 
 @NgModule({
-  declarations: [AppComponent, PedidosComponent],
+  declarations: [AppComponent, PedidosComponent, PizzariaComponent],
   imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule],
   providers: [],
   bootstrap: [AppComponent],

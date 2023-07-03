@@ -14,6 +14,8 @@ const httpOptions = {
 })
 export class PedidosService {
   url = 'https://localhost:7190/api/API/pedidos';
+  urlCliente = 'https://localhost:7190/api/Cliente/pedidosCliente';
+
 
   constructor(private http: HttpClient) { }
 
@@ -26,8 +28,13 @@ export class PedidosService {
     return this.http.get<Pedidos>(apiUrl);
   }
 
+  GetMesa(mesa: number): Observable<Pedidos> {
+    const apiMesa = 'https://localhost:7190/api/Cliente/pedidosCliente/{Mesa}';
+    return this.http.get<Pedidos>(apiUrl);
+  }
+
   PostPedido(pedido: Pedidos): Observable<any> {
-    return this.http.post<Pedidos>(this.url, pedido, httpOptions);
+    return this.http.post<Pedidos>(this.urlCliente, pedido, httpOptions);
   }
 
   PutPedido(pedido: Pedidos): Observable<any> {
