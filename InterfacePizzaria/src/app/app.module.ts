@@ -5,6 +5,7 @@ import { NgForm } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PedidosComponent } from './components/pedidos/pedidos.component';
+import { PizzariaComponent } from './components/pizzaria/pizzaria.component';
 
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
@@ -13,7 +14,7 @@ import { FormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent, 
-    PedidosComponent],
+    PedidosComponent, PizzariaComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -21,6 +22,6 @@ import { FormsModule } from '@angular/forms';
     FormsModule
   ],
   providers: [HttpClientModule, FormsModule],
-  bootstrap: [AppComponent, PedidosComponent],
+  bootstrap: [AppComponent, PedidosComponent, PizzariaComponent],
 })
 export class AppModule {}

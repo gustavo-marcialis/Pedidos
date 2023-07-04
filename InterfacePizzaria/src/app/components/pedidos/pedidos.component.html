@@ -14,7 +14,7 @@
 
             <form id="add-form" (ngSubmit)="f.form.valid && savePedido(f)" #f="ngForm" novalidate>
                 <div class="form-group">
-                    <label for="model">Mesa</label>
+                    <label>Mesa</label>
                     <input type="text" [(ngModel)]="pedido.mesa" id="mesa" name="mesa" #model="ngModel" required class="form-control" [ngClass]="{ 'is-invalid': f.submitted && model.invalid }" placeholder="Digite o Número da Mesa (Apenas Números)">
                     <div *ngIf="f.submitted && model.invalid" class="invalid-feedback">
                         <div *ngIf="model.errors">Mesa é obrigatório</div>
@@ -22,7 +22,7 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="model">Sabores</label>
+                    <label>Sabores</label>
                     <input type="text" [(ngModel)]="pedido.sabores" id="sabores" name="sabores" #model="ngModel" required class="form-control" [ngClass]="{ 'is-invalid': f.submitted && model.invalid }" placeholder="Digite os Itens do Pedido">
                     <div *ngIf="f.submitted && model.invalid" class="invalid-feedback">
                         <div *ngIf="model.errors">Sabores é obrigatório</div>
@@ -30,7 +30,7 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="model">Observações</label>
+                    <label>Observações</label>
                     <input type="text" [(ngModel)]="pedido.obs" id="obs" name="obs" #model="ngModel" class="form-control" [ngClass]="{ 'is-invalid': f.submitted && model.invalid }" placeholder="Digite as Observações">
                 </div>
                 

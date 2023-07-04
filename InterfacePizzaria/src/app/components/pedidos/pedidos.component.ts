@@ -28,9 +28,22 @@ export class PedidosComponent {
     }
   }
 
+  GetPedidos() {
+    this.pedidosService.getPedidos().subscribe((pedidos: Pedido[]) => {
+      this.pedidos = pedidos;
+    });
+  }
+
+  GetPedidoByMesa(mesa : string) {
+    this.pedidosService.getPedidoByMesa(mesa).subscribe((pedidos: Pedido) => {
+      this.pedido = pedidos;
+    });
+  }
+
   cleanForm(form: NgForm) {
+    this.GetPedidos();
     form.resetForm();
     this.pedido = {} as Pedido;
   }
-  
+
 }

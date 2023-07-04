@@ -29,6 +29,13 @@ export class PedidosService {
         catchError(this.handleError))
   }
 
+  getPedidoByMesa(mesa: string): Observable<Pedido> {
+    return this.httpClient.get<Pedido>(this.urlCliente + '/' + mesa)
+      .pipe(
+        retry(2),
+        catchError(this.handleError))
+  }
+
   savePedido(pedido: Pedido) : Observable<Pedido>{
     return this.httpClient.post<Pedido>(this.urlCliente, JSON.stringify(pedido), this.httpOptions)
       .pipe(
