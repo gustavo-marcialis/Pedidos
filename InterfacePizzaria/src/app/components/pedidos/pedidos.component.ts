@@ -7,7 +7,7 @@ import { NgForm } from '@angular/forms';
   templateUrl: './pedidos.component.html',
   styleUrls: ['./pedidos.component.css'],
 })
-export class PedidosComponent implements OnInit {
+export class PedidosComponent {
   tituloFormulario = 'Fazer Pedido';
 
   pedido = {} as Pedido;
@@ -15,9 +15,6 @@ export class PedidosComponent implements OnInit {
 
   constructor(private pedidosService: PedidosService) {}
 
-  ngOnInit(): void {
-    this.getPedidos();
-  }
 
   savePedido(form: NgForm) {
     if (this.pedido.id !== undefined) {
@@ -32,9 +29,8 @@ export class PedidosComponent implements OnInit {
   }
 
   cleanForm(form: NgForm) {
-    this.getPessoas();
     form.resetForm();
-    this.pessoa = {} as Pessoa;
+    this.pedido = {} as Pedido;
   }
   
 }

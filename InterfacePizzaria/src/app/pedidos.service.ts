@@ -38,7 +38,7 @@ export class PedidosService {
   }
 
   updatePedido(pedido: Pedido): Observable<Pedido> {
-    return this.httpClient.put<Pedido>(this.url + '/' + pedido.id, JSON.stringify(pessoa),
+    return this.httpClient.put<Pedido>(this.url + '/' + pedido.id, JSON.stringify(pedido),
      this.httpOptions)
       .pipe(
         retry(1),
