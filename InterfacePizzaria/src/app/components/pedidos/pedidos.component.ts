@@ -1,35 +1,40 @@
-import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
-
+import { Component } from '@angular/core';
+import { PedidosService } from 'src/app/pedidos.service';
+import { Pedido } from 'src/app/pedido';
+import { NgForm } from '@angular/forms';
 @Component({
   selector: 'app-pedidos',
   templateUrl: './pedidos.component.html',
   styleUrls: ['./pedidos.component.css'],
 })
 export class PedidosComponent implements OnInit {
-  formulario!: FormGroup;
-  tituloFormulario!: string;
+  tituloFormulario = 'Fazer Pedido';
 
-  constructor() {}
+  pedido = {} as Pedido;
+  pedidos: Pedido[] = [];
+
+  constructor(private pedidosService: PedidosService) {}
 
   ngOnInit(): void {
-    this.tituloFormulario = 'Fazer Pedido';
-    this.formulario = new FormGroup({
-      mesa: new FormControl(null),
-      sabores: new FormControl(null),
-      obs: new FormControl(null),
-    });
+    this.getPedidos();
   }
 
-  get mesa() {
-    return this.formulario.get('mesa');
+  savePedido(form: NgForm) {
+    if (this.pedido.id !== undefined) {
+      this.pedidosService.savePedido(this.pedido).subscribe(() => {
+        this.cleanForm(form);
+      });
+    } else {
+      this.pedidosService.savePedido(this.pedido).subscribe(() => {
+        this.cleanForm(form);
+      });
+    }
   }
 
-  get sabores() {
-    return this.formulario.get('sabores');
+  cleanForm(form: NgForm) {
+    this.getPessoas();
+    form.resetForm();
+    this.pessoa = {} as Pessoa;
   }
-
-  get obs() {
-    return this.formulario.get('obs');
-  }
+  
 }

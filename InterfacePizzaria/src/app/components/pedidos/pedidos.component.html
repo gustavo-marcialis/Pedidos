@@ -1,33 +1,47 @@
+<head>
+    <meta charset="utf-8">
+    <title>Pizzaria</title>
+    <base href="/">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  </head>
+
 <div class="container p-5">
     <div class="row">
         <div class="col-6 border border-light rounded p-5 shadow" *ngIf="formulario">
             <h1>{{tituloFormulario}}</h1>
             <hr />
 
-            <form [formGroup]="formulario">
+            <form id="add-form" (ngSubmit)="f.form.valid && savePedido(f)" #f="ngForm" novalidate>
                 <div class="form-group">
-                    <label>Mesa</label>
-                    <input type="number" class="form-control form-control-sm" formControlName="mesa">
+                    <label for="model">Mesa</label>
+                    <input type="text" [(ngModel)]="pedido.mesa" id="mesa" name="mesa" #model="ngModel" required class="form-control" [ngClass]="{ 'is-invalid': f.submitted && model.invalid }" placeholder="Digite o Número da Mesa (Apenas Números)">
+                    <div *ngIf="f.submitted && model.invalid" class="invalid-feedback">
+                        <div *ngIf="model.errors">Mesa é obrigatório</div>
+                    </div>
                 </div>
 
                 <div class="form-group">
-                    <label>Sabores</label>
-                    <input type="text" class="form-control form-control-sm" formControlName="sabores">
+                    <label for="model">Sabores</label>
+                    <input type="text" [(ngModel)]="pedido.sabores" id="sabores" name="sabores" #model="ngModel" required class="form-control" [ngClass]="{ 'is-invalid': f.submitted && model.invalid }" placeholder="Digite os Itens do Pedido">
+                    <div *ngIf="f.submitted && model.invalid" class="invalid-feedback">
+                        <div *ngIf="model.errors">Sabores é obrigatório</div>
+                    </div>
                 </div>
 
                 <div class="form-group">
-                    <label>Observações</label>
-                    <input type="text" class="form-control form-control-sm" formControlName="obs">
+                    <label for="model">Observações</label>
+                    <input type="text" [(ngModel)]="pedido.obs" id="obs" name="obs" #model="ngModel" class="form-control" [ngClass]="{ 'is-invalid': f.submitted && model.invalid }" placeholder="Digite as Observações">
                 </div>
-
+                
                 <div class="container">
                     <div class="row">
                         <div>
-                            <button type="submit" class="btn btn-sm btn-outline-suces">Enviar Pedido</button>
+                            <button type="submit" class="btn btn-primary btn-add-car">Enviar Pedido</button>
                         </div>
 
                         <div class="pl-1">
-                            <button type="button" class="btn btn-sm btn-outline-danger">Voltar</button>
+                            <button type="reset" class="btn btn-secondary btn-add-car" (click)="cleanForm(f)">Limpar</button>
                         </div>
                     </div>
                 </div>
