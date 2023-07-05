@@ -1,6 +1,6 @@
 # Sistema de Pedidos
   
-![C#](https://img.shields.io/badge/c%23-%23239120.svg?style=for-the-badge&logo=c-sharp&logoColor=white) ![.Net](https://img.shields.io/badge/.NET-5C2D91?style=for-the-badge&logo=.net&logoColor=white) ![MicrosoftSQLServer](https://img.shields.io/badge/Microsoft%20SQL%20Server-CC2927?style=for-the-badge&logo=microsoft%20sql%20server&logoColor=white) ![Angular](https://img.shields.io/badge/angular-%23DD0031.svg?style=for-the-badge&logo=angular&logoColor=white)	![Bootstrap](https://img.shields.io/badge/bootstrap-%238511FA.svg?style=for-the-badge&logo=bootstrap&logoColor=white)
+![C#](https://img.shields.io/badge/c%23-%23239120.svg?style=for-the-badge&logo=c-sharp&logoColor=white) ![.Net](https://img.shields.io/badge/.NET-5C2D91?style=for-the-badge&logo=.net&logoColor=white) ![MicrosoftSQLServer](https://img.shields.io/badge/Microsoft%20SQL%20Server-CC2927?style=for-the-badge&logo=microsoft%20sql%20server&logoColor=white)
   
   
 > Sistema automatizado de pedidos para uma pizzaria. O projeto visa aumentar a autonomia dos clientes ao fazer um pedido em ambiente físico de uma pizzaria e auxiliar na rapidez do atendimento.
@@ -10,11 +10,7 @@
 A API foi desenvolvida utilizando a linguagem C#, além das tecnologias SQL Server, ASP.Net e Entity Framework.
 
 
-## Interface Gráfica
-Para a interface gráfica, foram utilizadas as linguagens HTML, CSS, JavaScript e TypeScript, além das tecnologias Bootstrap e Angular.
-
-
- ## 📫 Contribuindo para o Gerador de Senhas 
+ ## 📫 Contribuindo para o Sistema de Pedidos 
 
  Para contribuir com o Gerador de Senhas, siga estas etapas: 
   
