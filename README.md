@@ -12,7 +12,7 @@ A API foi desenvolvida utilizando a linguagem C#, além das tecnologias SQL Serv
 
  ## 📫 Contribuindo para o Sistema de Pedidos 
 
- Para contribuir com o Gerador de Senhas, siga estas etapas: 
+ Para contribuir com o Sistema de Pedidos, siga estas etapas: 
   
  1. Bifurque este repositório. 
  2. Crie um branch: `git checkout -b <nome_branch>`. 
